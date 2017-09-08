@@ -7,10 +7,10 @@ import ConfigParser
 import os
 import urllib2
 
-profile='phowey1'
+profile='default'
 
-urL = "https://control.llnw.com/traffic-reporting-api/v2/usage"
-query = "shortname=shutterfly&service=http&service=https&endDate=2017-09-02&startDate=2017-09-01&reportDuration=custom"
+urL = "https://api.lldns.net/cfapi/v1/svcinst/delivery/manual/shortname/shutterfly"
+query = ""
 
 def read_conf(profile):
   config = ConfigParser.RawConfigParser()
