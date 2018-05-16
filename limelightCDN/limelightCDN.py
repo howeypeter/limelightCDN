@@ -44,7 +44,10 @@ class Auth:
 	token,timestamp = self.hmac(url,httpMethod,queryParameters,postData)
 	if queryParameters != None :
 	  url = url + "?" + queryParameters
-	req = urllib2.Request(url)
+	if postData != None :
+		req = urllib2.Request(url, postData)
+	else:
+		req = urllib2.Request(url)
 	req.add_header('Content-Type','application/json')
 	req.add_header('Accept','application/json')
 	req.add_header('X-LLNW-Security-Principal', username)
